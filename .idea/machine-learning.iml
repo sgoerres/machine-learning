@@ -7,6 +7,7 @@
     <orderEntry type="jdk" jdkName="Python 3.6 (machine-learning)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="deeplearning" />
+    <orderEntry type="module" module-name="Capstone" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
