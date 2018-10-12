@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="519f8694-761e-4010-b717-1b2fd40f3209" name="Default" comment="Reread done">
-      <change beforePath="$PROJECT_DIR$/.idea/machine-learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/machine-learning.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/projects/titanic_survival_exploration/titanic_survival_exploration.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="519f8694-761e-4010-b717-1b2fd40f3209" name="Default" comment="Reread done" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +12,7 @@
     <session id="307692666">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
@@ -61,46 +56,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Capstone/Project/ProjectImplementation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
-              <folding>
-                <element signature="e#46#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Capstone/Project/Methods/OutputTree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="48" column="15" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="15" />
-              <folding>
-                <element signature="e#96#126#0" expanded="true" />
-                <marker date="1539364619826" expanded="true" signature="1342:1343" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Capstone/Project/Methods/DataCleanup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="118" column="42" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
-              <folding>
-                <element signature="e#46#64#0" expanded="true" />
-                <marker date="1539363903938" expanded="true" signature="216:217" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -173,23 +129,7 @@
             </path>
             <path>
               <item name="machine-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machine-learning" type="462c0819:PsiDirectoryNode" />
-              <item name="projects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="machine-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="machine-learning" type="462c0819:PsiDirectoryNode" />
-              <item name="projects" type="462c0819:PsiDirectoryNode" />
-              <item name="titanic_survival_exploration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="machine-learning" type="b2602c69:ProjectViewProjectNode" />
               <item name="Capstone" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="machine-learning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -212,6 +152,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Develop\Udacity\machine-learning" />
       <recent name="F:\Develop\Udacity\Capstone\Project\Methods" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -544,9 +485,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22379182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22379182" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -820,13 +760,12 @@
     <entry file="file://$PROJECT_DIR$/../Capstone/Project/Outputs/3_graph.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Capstone/Project/Methods/DataCleanup.py">
+    <entry file="file://$PROJECT_DIR$/../Capstone/Project/ProjectImplementation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="118" column="42" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
+        <state relative-caret-position="1886">
+          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
           <folding>
-            <element signature="e#46#64#0" expanded="true" />
-            <marker date="1539363903938" expanded="true" signature="216:217" ph="..." />
+            <element signature="e#46#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -842,12 +781,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Capstone/Project/ProjectImplementation.py">
+    <entry file="file://$PROJECT_DIR$/../Capstone/Project/Methods/DataCleanup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        <state relative-caret-position="275">
+          <caret line="118" column="42" selection-start-line="118" selection-start-column="42" selection-end-line="118" selection-end-column="42" />
           <folding>
-            <element signature="e#46#65#0" expanded="true" />
+            <element signature="e#46#64#0" expanded="true" />
+            <marker date="1539363903938" expanded="true" signature="216:217" ph="..." />
           </folding>
         </state>
       </provider>
