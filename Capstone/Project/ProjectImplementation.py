@@ -66,7 +66,7 @@ if __name__ == '__main__':
     # try out full fitting first -> every feature might have an impact
     # this might lead to either heavy overfitting or a not so bad result
     S._s("adaboost_full")
-    adaboost_full = AdaBoostRegressor(DecisionTreeRegressor(max_depth=number_of_features), n_estimators=300, random_state=random_state)
+    adaboost_full = AdaBoostRegressor(DecisionTreeRegressor(max_depth=number_of_features, random_state=random_state), n_estimators=300, random_state=random_state)
     adaboost_tree = adaboost_full.fit(X_train,y_train)
     print(f"fitting adaboost full [s]: {S._rt('adaboost_full')}")
 
