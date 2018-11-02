@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Capstone/.idea/Capstone.iml" filepath="$PROJECT_DIR$/../Capstone/.idea/Capstone.iml" />
       <module fileurl="file://$PROJECT_DIR$/../deeplearning/.idea/deeplearning.iml" filepath="$PROJECT_DIR$/../deeplearning/.idea/deeplearning.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/machine-learning.iml" filepath="$PROJECT_DIR$/.idea/machine-learning.iml" />
     </modules>

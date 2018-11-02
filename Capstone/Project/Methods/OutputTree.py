@@ -35,7 +35,7 @@ def tree_to_code(tree, feature_names):
 def output_all_regressors(adaboostregressor, feature_names,  output_dir):
     counter = 0
     for e in adaboostregressor.estimators_:
-        outfile = output_dir + "f{counter}_out.dot"
+        outfile = output_dir + f"{counter}_out.dot"
         tree.export_graphviz(e, out_file=outfile,
                              feature_names=feature_names)  # , feature_names=cleared_train.columns.values
         outfile_png = output_dir + f"{counter}_out.png"
@@ -43,7 +43,7 @@ def output_all_regressors(adaboostregressor, feature_names,  output_dir):
         graph.write_png(outfile_png)
         outText = output_dir + f"{counter}_graph.txt"
         with open(outText, "w") as text_file:
-            text_file.write(O.tree_to_code(e, feature_names))  #
+            text_file.write(tree_to_code(e, feature_names))  #
         counter = counter + 1
 
 def output_plot(y_test, y_pred, output_dir):
