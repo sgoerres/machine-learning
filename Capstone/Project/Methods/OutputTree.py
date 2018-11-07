@@ -1,5 +1,5 @@
 #source: https://stackoverflow.com/a/39772170
-# modified to return a string instead of printing
+# modified to return a string instead of printing to console
 from sklearn.tree import _tree
 from sklearn import tree
 import pydot

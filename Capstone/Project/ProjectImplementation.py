@@ -59,7 +59,7 @@ if __name__ == '__main__':
         print(f"Shape X_train after split: {X_train.shape}")
         print(f"Shape y_train after split: {y_train.shape}")
         print(f"Shape X_test after split: {X_test.shape}")
-        print(f"Shape y_tes#t after split: {y_test.shape}")
+        print(f"Shape y_test after split: {y_test.shape}")
 
     # get number of features
     number_of_features = x.shape[1]
@@ -68,16 +68,14 @@ if __name__ == '__main__':
     # this might lead to either heavy overfitting or a not so bad result
     # however this is not after the basic intention of adaboost (many weak learners)
     S._s("adaboost_full")
-    adaboost_full = AdaBoostRegressor(DecisionTreeRegressor(max_depth=number_of_features, random_state=random_state), n_estimators=300, random_state=random_state)
+    adaboost_full = AdaBoostRegressor(DecisionTreeRegressor(max_depth=number_of_features, random_state=random_state), n_estimators=number_of_features, random_state=random_state)
     adaboost_tree = adaboost_full.fit(X_train,y_train)
     print(f"fitting adaboost full [s]: {S._rt('adaboost_full')}")
 
     # use gridearch for further optimization
     # use range with step size 2 to reduce overall calculation amount
-    base_estimator_max_depth = int(round(number_of_features * 0.15)) # take 15 percent of number of features as max depth for decisiontreeregressor
+    base_estimator_max_depth = 25#int(round(number_of_features * 0.15)) # take 15 percent of number of features as max depth for decisiontreeregressor
     param_grid = {"base_estimator__max_depth" : range(1, base_estimator_max_depth, 1),#number_of_features
-                  "base_estimator__max_features": ["auto", "log2"],
-                    "base_estimator__criterion" : ["mse", "mae"],
                   "n_estimators" : range(1, number_of_features, 1)}#number_of_features
 
     S._s("gridsearch")

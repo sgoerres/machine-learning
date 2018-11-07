@@ -9,11 +9,11 @@ def cleanupData(train, verbose = False, export = False, unique_cols = ["ID"], ou
     if verbose: print("Train:\n")
     if verbose: display(train.head())
     if verbose: print(train.describe())
-    # Extract result data from train dataset as y, keep remaining data as x
-    #y_train = train["y"]
+
+
     x_train = train#.drop("y",axis=1)
     if verbose: print(x_train.describe())
-    #if verbose: display(y_train.head())
+
     if verbose:  display(x_train.head())
 
     cols_to_drop = []
