@@ -22,8 +22,8 @@ if __name__ == '__main__':
 
     #specify random state and other settings
     random_state = 36#42
-    verbose = False
-    export = False
+    verbose = True
+    export = True
 
     # specify output dir
     output_dir = "Output/"
