@@ -16,6 +16,7 @@ import Methods.OutputTree as O
 # protect against some multiprocessing issues in windows
 # https://joblib.readthedocs.io/en/latest/parallel.html#old-multiprocessing-backend
 if __name__ == '__main__':
+    print("Starting...")
     # Load data
     train = pd.read_csv('data/train.csv')
 
@@ -75,7 +76,7 @@ if __name__ == '__main__':
     # use range with step size 2 to reduce overall calculation amount
     base_estimator_max_depth = int(round(number_of_features * 0.15)) # take 15 percent of number of features as max depth for decisiontreeregressor
     param_grid = {"base_estimator__max_depth" : range(1, base_estimator_max_depth, 1),#number_of_features
-                  "base_esitmator__max_features": ["auto", "log2"],
+                  "base_estimator__max_features": ["auto", "log2"],
                     "base_estimator__criterion" : ["mse", "mae"],
                   "n_estimators" : range(1, number_of_features, 1)}#number_of_features
 
