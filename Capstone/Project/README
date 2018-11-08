@@ -1,0 +1,37 @@
+README for Capstone Project by Sven Görres
+------------------------------------------
+
+The proposal review is found here: https://review.udacity.com/#!/reviews/1485556
+
+
+Python Environment:
+- Anaconda 3 with additional pydot package
+
+Packages used:
+numpy
+pandas
+IPython.display
+sklearn
+matplotlib
+pydot
+os
+datetime
+
+Project Structure:
+
+./ProjectImplementation.py - the main Project file
+./Methods - folder containing additional logic that were outsorced for readability
+./Methods/DataStatistic.py - basic data statistic
+./Methods/DataCleanup.py - all cleaning up of the initial data
+./Methods/OutputTree.py - Plotting of the regression trees as well as resulting data scatter plot
+./Methods/Performance.py - basic global stopwatch handling
+./data - folder containing the original data from the kaggle project
+./data/train.csv - the original data set itself
+./Result - folder containing all intermediate outputs and the final plots
+./Output - folder containing all outputs from the script (excluding most images of AdaBoost graphs)
+./GridSearch25MaxDepth.txt - Verbose output of GridSearchCV for the final result
+./GridSearchBigApproach.txt - Verbose output of GridSearchCV for more complex search (incomplete)
+./FullVerboseOutput.txt - Verbose output of my implementation (excluding GridSearchCV)
+./proposal.pdf - the original project proposal
+./project.pdf - the project report itself
+./README - this file

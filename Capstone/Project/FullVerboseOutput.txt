@@ -1,0 +1,134 @@
+Starting...
+Train:
+
+   ID       y  X0 X1  X2 X3 X4  ...  X378 X379 X380  X382  X383  X384  X385
+0   0  130.81   k  v  at  a  d  ...     0    0    0     0     0     0     0
+1   6   88.53   k  t  av  e  d  ...     0    0    0     0     0     0     0
+2   7   76.26  az  w   n  c  d  ...     0    0    0     1     0     0     0
+3   9   80.62  az  t   n  f  d  ...     0    0    0     0     0     0     0
+4  13   78.02  az  v   n  f  d  ...     0    0    0     0     0     0     0
+
+[5 rows x 378 columns]
+                ID            y     ...              X384         X385
+count  4209.000000  4209.000000     ...       4209.000000  4209.000000
+mean   4205.960798   100.669318     ...          0.000475     0.001426
+std    2437.608688    12.679381     ...          0.021796     0.037734
+min       0.000000    72.110000     ...          0.000000     0.000000
+25%    2095.000000    90.820000     ...          0.000000     0.000000
+50%    4220.000000    99.150000     ...          0.000000     0.000000
+75%    6314.000000   109.010000     ...          0.000000     0.000000
+max    8417.000000   265.320000     ...          1.000000     1.000000
+
+[8 rows x 370 columns]
+X10    0.013305
+X11    0.000000
+X12    0.075077
+X13    0.057971
+X14    0.428130
+dtype: float64
+0    0.141304
+1    0.141304
+2     0.19837
+3    0.168478
+4    0.157609
+dtype: object
+Column: X11 - Value 0
+Column: X93 - Value 0
+Column: X107 - Value 0
+Column: X233 - Value 0
+Column: X235 - Value 0
+Column: X268 - Value 0
+Column: X289 - Value 0
+Column: X290 - Value 0
+Column: X293 - Value 0
+Column: X297 - Value 0
+Column: X330 - Value 0
+Column: X347 - Value 0
+Columns that are constant:
+['X11',
+ 'X93',
+ 'X107',
+ 'X233',
+ 'X235',
+ 'X268',
+ 'X289',
+ 'X290',
+ 'X293',
+ 'X297',
+ 'X330',
+ 'X347']
+Has duplicate rows: True
+Duplicate Rows: [3735]
+Has duplicate cols: True
+Duplicate columns: ['X35', 'X37', 'X39', 'X76', 'X84', 'X94', 'X102', 'X113', 'X119', 'X122', 'X134', 'X146', 'X147', 'X172', 'X199', 'X213', 'X214', 'X216', 'X222', 'X226', 'X227', 'X232', 'X239', 'X242', 'X243', 'X244', 'X245', 'X247', 'X248', 'X253', 'X254', 'X262', 'X266', 'X279', 'X296', 'X299', 'X302', 'X320', 'X324', 'X326', 'X360', 'X364', 'X365', 'X382', 'X385']
+Intermediate x_train after removing duplicates: 
+   ID       y  X0 X1  X2 X3 X4  ...  X376 X377 X378  X379  X380  X383  X384
+0   0  130.81   k  v  at  a  d  ...     0    1    0     0     0     0     0
+1   6   88.53   k  t  av  e  d  ...     0    0    0     0     0     0     0
+2   7   76.26  az  w   n  c  d  ...     0    0    0     0     0     0     0
+3   9   80.62  az  t   n  f  d  ...     0    0    0     0     0     0     0
+4  13   78.02  az  v   n  f  d  ...     0    0    0     0     0     0     0
+
+[5 rows x 321 columns]
+Non numeric cols: ['X0', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X8']
+      ID     y    X10    X12    X13  ...     X378   X379   X380   X383   X384
+0  False  True  False  False   True  ...    False  False  False  False  False
+1   True  True  False  False  False  ...    False  False  False  False  False
+2   True  True  False  False  False  ...    False  False  False  False  False
+3   True  True  False  False  False  ...    False  False  False  False  False
+4   True  True  False  False  False  ...    False  False  False  False  False
+
+[5 rows x 313 columns]
+      y    X10    X12    X13    X14  ...     X378   X379   X380   X383   X384
+0  True  False  False   True  False  ...    False  False  False  False  False
+1  True  False  False  False  False  ...    False  False  False  False  False
+2  True  False  False  False  False  ...    False  False  False  False  False
+3  True  False  False  False  False  ...    False  False  False  False  False
+4  True  False  False  False  False  ...    False  False  False  False  False
+
+[5 rows x 312 columns]
+       y   X10   X12    X13   X14  ...   X378  X379  X380  X383  X384
+0  False  True  True  False  True  ...   True  True  True  True  True
+1  False  True  True   True  True  ...   True  True  True  True  True
+2  False  True  True   True  True  ...   True  True  True  True  True
+3  False  True  True   True  True  ...   True  True  True  True  True
+4  False  True  True   True  True  ...   True  True  True  True  True
+
+[5 rows x 312 columns]
+Inverted duplicates: ['X204', 'X263', 'X120', 'X136', 'X130', 'X158', 'X157', 'X194']
+columns for one-hot-encoding: ['X0', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X8']
+Runtime cleanup [s]: 50.995144
+Shape X after cleanup: (4208, 498)
+Shape Y after cleanup: (4208,)
+Shape X_train after split: (3156, 498)
+Shape y_train after split: (3156,)
+Shape X_test after split: (1052, 498)
+Shape y_test after split: (1052,)
+fitting adaboost full [s]: 37.919504
+predicting adaboost full [s]: 0.279972
+fitting best estimator [s]: 0.406557
+predicting best estimator [s]: 0.010008
+y adaboost full: 
+[129.25347826  87.21        96.23       ... 110.54       103.7
+ 103.82      ]
+y best:          
+[113.16597772  77.50788079  94.60245957 ... 106.76118026  94.60245957
+ 104.48509302]
+y_test:          
+[108.27  74.66 103.32 ...  98.61  93.98 101.33]
+Adaboost Params: 
+{'base_estimator__criterion': 'mse', 'base_estimator__max_depth': 498, 'base_estimator__max_features': None, 'base_estimator__max_leaf_nodes': None, 'base_estimator__min_impurity_decrease': 0.0, 'base_estimator__min_impurity_split': None, 'base_estimator__min_samples_leaf': 1, 'base_estimator__min_samples_split': 2, 'base_estimator__min_weight_fraction_leaf': 0.0, 'base_estimator__presort': False, 'base_estimator__random_state': 36, 'base_estimator__splitter': 'best', 'base_estimator': DecisionTreeRegressor(criterion='mse', max_depth=498, max_features=None,
+           max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           presort=False, random_state=36, splitter='best'), 'learning_rate': 1.0, 'loss': 'linear', 'n_estimators': 498, 'random_state': 36}
+Best Params:     
+{'base_estimator__criterion': 'mse', 'base_estimator__max_depth': 4, 'base_estimator__max_features': None, 'base_estimator__max_leaf_nodes': None, 'base_estimator__min_impurity_decrease': 0.0, 'base_estimator__min_impurity_split': None, 'base_estimator__min_samples_leaf': 1, 'base_estimator__min_samples_split': 2, 'base_estimator__min_weight_fraction_leaf': 0.0, 'base_estimator__presort': False, 'base_estimator__random_state': 36, 'base_estimator__splitter': 'best', 'base_estimator': DecisionTreeRegressor(criterion='mse', max_depth=4, max_features=None,
+           max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           presort=False, random_state=36, splitter='best'), 'learning_rate': 1.0, 'loss': 'linear', 'n_estimators': 4, 'random_state': 36}
+Adaboost full R2 score:  0.19541412236829436
+Best Estimator R2 score: 0.4721459157167961
+Exporting resulting models [s]: 10.270076
+Runtime total [s]: 103.133039

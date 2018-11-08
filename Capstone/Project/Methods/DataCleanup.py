@@ -5,17 +5,7 @@ from IPython.display import display
 
 
 def cleanupData(train, verbose = False, export = False, unique_cols = ["ID"], output_dir=""):
-    # show train data head
-    if verbose: print("Train:\n")
-    if verbose: display(train.head())
-    if verbose: print(train.describe())
-
-
-    x_train = train#.drop("y",axis=1)
-    if verbose: print(x_train.describe())
-
-    if verbose:  display(x_train.head())
-
+    x_train = train
     cols_to_drop = []
     # try to find columns where the value is constant (no need to analyse those)
     for col in x_train:
