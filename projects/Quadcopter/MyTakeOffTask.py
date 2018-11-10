@@ -17,7 +17,7 @@ class MyTakeOffTask():
         """
         # Simulation
         self.sim = PhysicsSim(init_pose, init_velocities, init_angle_velocities, runtime) 
-        self.action_repeat = 3
+        self.action_repeat = 1
 
         self.state_size = self.action_repeat * 6
         self.action_low = 0
@@ -29,15 +29,11 @@ class MyTakeOffTask():
         self.target_pos = target_pos if target_pos is not None else np.array([0., 0., 10.]) 
 
     def get_reward(self):
-
-        # best case (leading to highest reward = 1):
-        # velocity in all directions close to 0 => stable at target position : =.3
-        # position close to target pos: =.5
-        # phi, theta, psi close to 0 (almost fully stable quadcopter): = .2
-
-        # Step 1: get all info about total move to make
-
+        # get all necessary distances
+        distance_length_x_max = abs(self.init_pose[0] - self.target_pos[0])
+        distance_length_y_max = abs(self.init_pose[1] - self.target_pos[1])
         distance_length_z_max = abs(self.init_pose[2] - self.target_pos[2])
+
         distance_vectormax = self.init_pose[:3] - self.target_pos
         distance_vector_squared_max = np.square(distance_vectormax)
         distance_length_max = math.sqrt(np.sum(distance_vector_squared_max))
@@ -47,30 +43,87 @@ class MyTakeOffTask():
         distance_vector_squared = np.square(distance_vector)
         
         distance_length = math.sqrt(np.sum(distance_vector_squared))
-        distance_length_z = (self.target_pos[2] - self.sim.pose[2])
-        # Step 2: punish being to far away
-        reward = - ((distance_length_z)/distance_length_max) # normalize against total path
+#
+        distance_length_x = self.target_pos[0] - self.sim.pose[0]
+        distance_length_y = self.target_pos[1] - self.sim.pose[1]
+        distance_length_z = self.target_pos[2] - self.sim.pose[2]
 
-        # Step 3: reward rising from the ground
-        distance_length2 = (self.sim.pose[2] - self.init_pose[2])
+        # Step 1: reward reaching the target slowly
+        #if abs(distance_length_x_max) > 0.0:
+        #    distance_reward_x = 1 - abs(distance_length_x / distance_length_x_max)
+        #elif abs(distance_length_x) > 0.1:
+        #    distance_reward_x = 0.8
+        #else:
+        #    distance_reward_x = 1
+#
+        #if abs(distance_length_y_max) > 0.0:
+        #    distance_reward_y = 1 - abs(distance_length_y / distance_length_y_max)
+        #elif abs(distance_length_y) > 0.1:
+        #    distance_reward_y = 0.8
+        #else:
+        #    distance_reward_y = 1
 
-        if distance_length_z >= -0.2:
-            reward += distance_length2/distance_length_z_max
+        #if abs(distance_length_z_max) > 0.0:
+        #    distance_reward_z = 1 - abs(distance_length_z / distance_length_z_max)
+        #elif abs(distance_length_z) > 0.1:
+        #    distance_reward_z = 0.8
+        #else:
+        #    distance_reward_z = 1#
 
-        #  ## Step 2: Punish if going too fast in the end
-        #  if distance_length < 0.2:
-        #     if abs(self.sim.v[0]) >= 0.2:
-        #        reward -= 1
-        #    if abs(self.sim.v[1]) >= 0.2:
-        #        reward -= 1
-        #    if abs(self.sim.v[2]) >= 0.2:
-        #        reward -= 1
+        distance_vector2 = self.sim.pose[:3] - self.init_pose[:3]
 
-        if reward < -25:  # this is taking a turn for the worse
-            reward = -100
+        distance_vector_squared2 = np.square(distance_vector2)
+
+        distance_length2 = math.sqrt(np.sum(distance_vector_squared2))
+
+        distance_reward_total = 1- (distance_length / distance_length_max) #1 - math.sqrt
+
+        distance_reward_total2 = (distance_length2 / distance_length_max)
+
+        reward = distance_length2 * distance_reward_total
+
+        #reward = distance_reward_total2 + distance_reward_total * 2
+
+        # Step 2: put an incentive out for starting vertically and not wobbling much
+        #if abs(self.sim.pose[3]) < 1.0: #phi
+        #    reward += 5
+        #else:
+        #    reward -= abs(self.sim.pose[3]) *1.5
+
+
+        #if abs(self.sim.pose[4]) < 1.0: #theta
+        #    reward += 5
+        #else:
+        #    reward -= abs(self.sim.pose[4]) *1.5
+
+        # reward -= self.sim.pose[5]/360.0  # make psi as close to zero as possible => thus start vertically
+        #reward -= self.sim.pose[4]  # make theta as close to zero as possible => thus start vertically
+        #reward -= self.sim.pose[3]/360.0  # make phi as close to zero as possible => thus start vertically
+
+        # punish falling late in the game
+        if self.sim.pose[2] < self.init_pose[2] and self.sim.time > 1.0:
+            reward -= 15 * (self.init_pose[2] - self.sim.pose[2]) * 10
+
+        # punish velocity in some other direction then up
+
+        if abs(self.sim.v[0]) > 2:
+            reward -= abs(self.sim.v[0])
+
+        if abs(self.sim.v[1]) > 2:
+            reward -= abs(self.sim.v[1])
+
+        if abs(self.sim.v[2]) > 2:
+            reward += abs(self.sim.v[2])
+
+        # reward runtime
+        reward += self.sim.time * 2#
+
+
         # Step 3: Punish if finished early (taken from https://study-hall.udacity.com/sg-465545-9999/rooms/community:nd009t:465545-cohort-9999-project-1189/community:thread-10335140521-256557?contextType=room)
         if self.sim.done and self.sim.runtime > self.sim.time:
             reward = -100
+
+
 
         return reward
 
