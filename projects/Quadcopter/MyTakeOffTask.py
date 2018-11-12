@@ -51,12 +51,16 @@ class MyTakeOffTask():
 
         distance_reward_total2 = (distance_length2 / distance_length_max)
 
-        reward = distance_reward_total2 * distance_reward_total
+        reward = distance_reward_total2 + distance_reward_total
 
         # punish falling
-        if self.sim.pose[2] < self.init_pose[2] and abs(self.sim.pose[2] - self.init_pose[2]) > 0.2:
-            reward -= 15 * (self.init_pose[2] - self.sim.pose[2]) * 10
+        if self.sim.pose[2] < self.init_pose[2] and abs(self.sim.pose[2] - self.init_pose[2]) > 0.5:
+            reward -= (self.init_pose[2] - self.sim.pose[2]) * 10
 #
+        # encourage rising
+        if self.sim.pose[2] > self.init_pose[2] and abs(self.sim.pose[2] - self.init_pose[2]) > 0.05:
+            intermediate = 10 * abs(self.init_pose[2] - self.sim.pose[2])
+            reward +=  intermediate #if intermediate <= 2 else 2.0
         # punish velocity in some other direction then up
 #
         #if abs(self.sim.v[0]) > 2:
@@ -69,7 +73,7 @@ class MyTakeOffTask():
         #    reward += abs(self.sim.v[2])
 #
         # reward runtime
-        #reward += self.sim.time * 2#
+        reward += self.sim.time #* 2#
 
 
         # Step 3: Punish if finished early (taken from https://study-hall.udacity.com/sg-465545-9999/rooms/community:nd009t:465545-cohort-9999-project-1189/community:thread-10335140521-256557?contextType=room)
